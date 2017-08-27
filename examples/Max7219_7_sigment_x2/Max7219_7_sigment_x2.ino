@@ -1,7 +1,6 @@
-const int din = 7;
-const int clk = 6;
-const int load = 5; 
-const int LED = 8; 
+const int din = 8;
+const int clk = 10;
+const int load = 9; 
 
 void setup() {
   pinMode(din, OUTPUT);
@@ -11,9 +10,9 @@ void setup() {
   digitalWrite(LED, LOW);
   
   check(0x0C, 0x01); //shoutdown mode 0x01 = 1 || 0x00 = 0
-  check(0x09, 0x0F); //decode mode
-  check(0x0B, 0x02); //scan limmit from 0 to 1
-  check(0x0A, 0x00); //intensity MAX7219 25/32  
+  check(0x09, 0xFF); //decode mode
+  check(0x0B, 0x07); //scan limmit from 0 to 1
+  check(0x0A, 0x03); //intensity MAX7219 25/32  
 }
 
 void loop() {
